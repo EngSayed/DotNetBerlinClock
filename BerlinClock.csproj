@@ -35,8 +35,15 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.4.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>packages\Autofac.4.9.4\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>packages\FluentValidation.8.6.2\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,14 +56,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autofac\AutoFacServiceLocator.cs" />
+    <Compile Include="Autofac\IServiceLocator.cs" />
     <Compile Include="BDD\BerlinClockFeatureSteps.cs" />
+    <Compile Include="BDD\Hooks.cs" />
+    <Compile Include="Classes\BerlinTime.cs" />
+    <Compile Include="Classes\BerlinTimeConverter.cs" />
+    <Compile Include="Classes\LampState.cs" />
+    <Compile Include="Classes\TimeParser.cs" />
+    <Compile Include="Classes\TimePartParser.cs" />
+    <Compile Include="Classes\TimeValidator.cs" />
+    <Compile Include="Classes\ValidationErrorException.cs" />
+    <Compile Include="Interfaces\IBerlinTimeConverter.cs" />
+    <Compile Include="Interfaces\ITime.cs" />
+    <Compile Include="Interfaces\ITimeConverter.cs" />
+    <Compile Include="Interfaces\ITimeParser.cs" />
+    <Compile Include="Interfaces\ITimePartParser.cs" />
+    <Compile Include="IoC\TimeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BDD\BerlinClockFeatureSteps.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BerlinClockFeatureSteps.feature</DependentUpon>
     </Compile>
-    <Compile Include="Classes\ITimeConverter.cs" />
     <Compile Include="Classes\TimeConverter.cs" />
   </ItemGroup>
   <ItemGroup>

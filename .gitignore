@@ -6,3 +6,8 @@
 /bin/Debug
 /obj/Debug
 /packages/SpecFlow.1.9.0
+/BerlinClock.UnitTests/bin/Debug
+/packages
+/BerlinClock.UnitTests/obj/Debug
+/BerlinClock.UnitTests/BerlinClock.UnitTests.csproj.user
+/BerlinClock.csproj.user
